@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useRef, ReactNode } from 'react';
 
 export type CartItem = {
   id: number;
@@ -8,6 +8,8 @@ export type CartItem = {
   image: string;
   quantity: number;
 };
+
+type Toast = { name: string; image: string } | null;
 
 type CartContextType = {
   items: CartItem[];
@@ -19,6 +21,7 @@ type CartContextType = {
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
+  toast: Toast;
 };
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -26,6 +29,14 @@ const CartContext = createContext<CartContextType | null>(null);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [toast, setToast] = useState<Toast>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const triggerToast = (item: { name: string; image: string }) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    setToast(item);
+    toastTimer.current = setTimeout(() => setToast(null), 3000);
+  };
 
   const addToCart = (item: Omit<CartItem, 'quantity'>) => {
     setItems((prev) => {
@@ -37,7 +48,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...prev, { ...item, quantity: 1 }];
     });
-    setIsOpen(true);
+    triggerToast({ name: item.name, image: item.image });
   };
 
   const removeFromCart = (id: number) => {
@@ -69,6 +80,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         isOpen,
         openCart: () => setIsOpen(true),
         closeCart: () => setIsOpen(false),
+        toast,
       }}
     >
       {children}

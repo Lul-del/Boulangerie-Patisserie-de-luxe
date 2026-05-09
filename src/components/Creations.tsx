@@ -258,7 +258,6 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
 export default function Creations() {
   const [activeCategory, setActiveCategory] = useState('Tout');
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [modalProduct, setModalProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(false);
   const { addToCart } = useCart();
@@ -340,13 +339,10 @@ export default function Creations() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {filtered.map((product, index) => (
+          {filtered.map((product) => (
             <div
               key={product.id}
               className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              onMouseEnter={() => setHoveredId(product.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image */}
               <div className="relative h-44 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
@@ -355,11 +351,7 @@ export default function Creations() {
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div
-                  className={`absolute inset-0 bg-chocolate-900/40 flex items-center justify-center gap-3 transition-opacity duration-300 ${
-                    hoveredId === product.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
+                <div className="absolute inset-0 bg-chocolate-900/40 flex items-center justify-center gap-3 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100">
                   <button
                     type="button"
                     aria-label="Voir les détails"

@@ -3,31 +3,31 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Marie Dupont",
+    name: "Marie",
     role: "Cliente fidèle",
     text: "Les croissants de la La boulangerie pâtisserie du LU sont tout simplement les meilleurs de Paris. Le feuilletage est parfait, le beurre fond sur la langue... C'est un pur moment de bonheur chaque matin !",
     rating: 5,
   },
   {
-    name: "Pierre Martin",
+    name: "Pierre",
     role: "Critique gastronomique",
     text: "En tant que critique, j'ai visité des centaines de pâtisseries. La boulangerie pâtisserie du LU se distingue par l'harmonie parfaite entre tradition et innovation. Leurs éclairs sont une révélation.",
     rating: 5,
   },
   {
-    name: "Sophie Laurent",
+    name: "Sophie",
     role: "Wedding planner",
     text: "Pour les mariages de mes clients, je ne fais confiance qu'à La boulangerie pâtisserie du LU. Leurs pièces montées sont des œuvres d'art et le goût est toujours à la hauteur de la présentation.",
     rating: 5,
   },
   {
-    name: "Thomas Bernard",
+    name: "Thomas",
     role: "Chef étoilé",
     text: "La qualité des ingrédients utilisés par La boulangerie pâtisserie du LU est exceptionnelle. On sent le soin apporté à chaque détail. Les macarons sont d'une finesse rare.",
     rating: 5,
   },
   {
-    name: "Isabelle Moreau",
+    name: "Isabelle",
     role: "Blogueuse culinaire",
     text: "J'ai découvert La boulangerie pâtisserie du LU il y a 5 ans et depuis, impossible d'aller ailleurs. Leur tarte au citron meringuée est un chef-d'œuvre absolu. Je recommande les yeux fermés !",
     rating: 5,
