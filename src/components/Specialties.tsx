@@ -1,4 +1,5 @@
 import { Cake, Croissant, Cookie, Coffee } from 'lucide-react';
+import Reveal from './Reveal';
 
 const specialties = [
   {
@@ -43,8 +44,7 @@ export default function Specialties() {
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+        <Reveal className="text-center mb-8 sm:mb-12 lg:mb-16">
           <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-xs sm:text-sm">
             Services
           </span>
@@ -55,31 +55,26 @@ export default function Specialties() {
             Du petit-déjeuner aux grandes occasions, nous accompagnons tous vos
             moments de gourmandise.
           </p>
-        </div>
+        </Reveal>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {specialties.map((s, i) => (
-            <div
-              key={s.title}
-              className="group relative bg-cream-50 rounded-3xl p-5 sm:p-8 text-center hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-transparent hover:border-gold-100"
-              style={{ animationDelay: `${i * 100}ms` }}
-            >
-              <div
-                className={`inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 ${s.bgColor} rounded-2xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <s.icon size={26} className={s.iconColor} />
+            <Reveal key={s.title} delay={i * 100}>
+              <div className="group relative bg-cream-50 rounded-3xl p-5 sm:p-8 text-center hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-transparent hover:border-gold-100 h-full">
+                <div
+                  className={`inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 ${s.bgColor} rounded-2xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <s.icon size={26} className={s.iconColor} />
+                </div>
+                <h3 className="font-poppins text-lg sm:text-xl font-bold text-chocolate-900 mb-2 sm:mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-chocolate-500 text-sm leading-relaxed">
+                  {s.description}
+                </p>
+                <div className={`mt-4 sm:mt-6 h-1 w-12 mx-auto rounded-full bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 group-hover:w-20 transition-all duration-500`} />
               </div>
-
-              <h3 className="font-poppins text-lg sm:text-xl font-bold text-chocolate-900 mb-2 sm:mb-3">
-                {s.title}
-              </h3>
-              <p className="text-chocolate-500 text-sm leading-relaxed">
-                {s.description}
-              </p>
-
-              <div className={`mt-4 sm:mt-6 h-1 w-12 mx-auto rounded-full bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 group-hover:w-20 transition-all duration-500`} />
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

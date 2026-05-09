@@ -59,18 +59,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#accueil" className="flex items-center gap-2 group">
-            <span className="text-3xl">🥐</span>
-            <div>
+          <a href="#accueil" className="flex items-center gap-2 group min-w-0 shrink">
+            <span className="text-2xl sm:text-3xl flex-shrink-0">🥐</span>
+            <div className="min-w-0">
               <h1
-                className={`font-playfair text-sm sm:text-2xl font-bold transition-colors duration-300 ${
+                className={`font-playfair text-xs sm:text-sm md:text-base navbar:text-xl font-bold transition-colors duration-300 whitespace-nowrap overflow-hidden text-ellipsis ${
                   scrolled ? "text-chocolate-900" : "text-white"
                 }`}
               >
                 La boulangerie pâtisserie du LU
               </h1>
               <p
-                className={`text-xs tracking-[0.3em] uppercase transition-colors duration-300 ${
+                className={`text-[10px] sm:text-xs tracking-[0.2em] uppercase transition-colors duration-300 whitespace-nowrap ${
                   scrolled ? "text-gold-600" : "text-gold-200"
                 }`}
               >

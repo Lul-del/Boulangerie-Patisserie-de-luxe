@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ShoppingBag, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import Reveal from './Reveal';
 import img1 from '../images/images-type-1/690668422_1003121798906982_5916323587094176197_n.jpg';
 import img2 from '../images/images-type-1/690700292_1003121805573648_6013243963642603258_n.jpg';
 
@@ -188,6 +189,8 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
               {images.map((src, i) => (
                 <button
                   key={i}
+                  type="button"
+                  aria-label={`Image ${i + 1}`}
                   onClick={() => setActiveImg(i)}
                   className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all ${
                     i === activeImg ? 'border-gold-500 scale-105' : 'border-transparent opacity-60 hover:opacity-100'
@@ -307,7 +310,7 @@ export default function Creations() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+        <Reveal className="text-center mb-8 sm:mb-12 lg:mb-16">
           <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-xs sm:text-sm">
             Nos Spécialités
           </span>
@@ -318,13 +321,14 @@ export default function Creations() {
             Découvrez notre sélection de pâtisseries artisanales, préparées chaque
             jour avec les meilleurs ingrédients.
           </p>
-        </div>
+        </Reveal>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-14">
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActiveCategory(cat)}
               className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeCategory === cat
@@ -339,10 +343,10 @@ export default function Creations() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {filtered.map((product) => (
+          {filtered.map((product, i) => (
+            <Reveal key={product.id} delay={i * 80}>
             <div
-              key={product.id}
-              className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full"
             >
               {/* Image */}
               <div className="relative h-44 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
@@ -409,6 +413,7 @@ export default function Creations() {
                 </div>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
