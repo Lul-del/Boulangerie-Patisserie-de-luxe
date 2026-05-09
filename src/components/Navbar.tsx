@@ -170,7 +170,7 @@ export default function Navbar() {
               className="flex items-center justify-center gap-2 mt-4 bg-gold-500 text-white px-5 py-3 rounded-full font-semibold hover:bg-gold-600 transition-all"
             >
               <Phone size={14} />
-              01 23 45 67 89
+              01 52 82 52 52
             </a>
           </div>
         </div>
