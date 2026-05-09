@@ -2,10 +2,66 @@ import { useState } from 'react';
 import { ShoppingBag, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import Reveal from './Reveal';
-import img1 from '../images/images-type-1/690668422_1003121798906982_5916323587094176197_n.jpg';
-import img2 from '../images/images-type-1/690700292_1003121805573648_6013243963642603258_n.jpg';
 
-const categories = ['Tout', 'Gâteaux', 'Viennoiseries', 'Tartes', 'Macarons', 'Éclairs'];
+// Gâteaux - gateaux/
+import gOpera1 from '../images/gateaux/690668422_1003121798906982_5916323587094176197_n.jpg';
+import gOpera2 from '../images/gateaux/690700292_1003121805573648_6013243963642603258_n.jpg';
+
+// Gâteaux - gateau4/
+import gPrestige1 from '../images/gateau4/602324691_897937879425375_6536462886807464220_n.jpg';
+import gPrestige2 from '../images/gateau4/605829163_897937829425380_3416230893150223489_n.jpg';
+import gPrestige3 from '../images/gateau4/605986787_897937832758713_2174941851753183590_n.jpg';
+
+// Gâteaux - gateaux2/
+import gCol1 from '../images/gateaux2/605132268_898540242698472_5462772389821395498_n.jpg';
+import gCol2 from '../images/gateaux2/605378330_898540189365144_7700118513417909164_n.jpg';
+import gCol3 from '../images/gateaux2/607197536_898540232698473_7950957663424926453_n.jpg';
+import gCol4 from '../images/gateaux2/607654008_898540176031812_2766982843804685887_n.jpg';
+
+// Gâteaux - gateaux8/
+import gFestif1 from '../images/gateaux8/528562663_783041097581721_7446834547823919474_n.jpg';
+import gFestif2 from '../images/gateaux8/528778016_783041117581719_2962159748748603053_n.jpg';
+import gFestif3 from '../images/gateaux8/528862283_783041124248385_5775777209913228536_n.jpg';
+
+// Viennoiseries - pain1/
+import vPain1a from '../images/pain1-Viennoiseries/672672241_986806617205167_8678218494853262326_n.jpg';
+import vPain1b from '../images/pain1-Viennoiseries/672686478_986806560538506_53670304700893276_n.jpg';
+import vPain1c from '../images/pain1-Viennoiseries/675274896_986806737205155_6571547342943908593_n.jpg';
+
+// Viennoiseries - pain2/
+import vPain2a from '../images/pain2-Viennoiseries/673846700_18060829373703186_6907006322098634787_n.jpg';
+import vPain2b from '../images/pain2-Viennoiseries/682047602_18060829361703186_7608575997338808400_n.jpg';
+
+// Macarons
+import mac1 from '../images/macarons/531356661_787577330461431_4100693383838962507_n.jpg';
+import mac2 from '../images/macarons/531491942_787577353794762_5388941252543566706_n.jpg';
+import mac3 from '../images/macarons/532333140_787577350461429_611128294912418556_n.jpg';
+
+// Tartes - Tarte/
+import tarte1 from '../images/Tarte/557176857_1359645079497351_5688179141113497017_n.jpg';
+import tarte2 from '../images/Tarte/557281325_1359644856164040_1092833453464881525_n.jpg';
+import tarte3 from '../images/Tarte/557950566_1359645036164022_354247793554945517_n.jpg';
+import tarte4 from '../images/Tarte/558239495_1359644822830710_889515237434781343_n.jpg';
+import tarte5 from '../images/Tarte/560575077_1359645329497326_2894273547974428533_n.jpg';
+
+// Tartes - Tartes-2/
+import tarte2a from '../images/Tartes-2/522646765_773316865220811_2368837641467114293_n.jpg';
+import tarte2b from '../images/Tartes-2/523349868_773316921887472_1167239575718333177_n.jpg';
+import tarte2c from '../images/Tartes-2/523632393_773316935220804_9117719013455600963_n.jpg';
+
+// Autres - akassa-autres/
+import akassa1 from '../images/akassa-autres/672673315_1526460236149167_7437019105440808052_n.jpg';
+import akassa2 from '../images/akassa-autres/672681415_1526460396149151_355789737983002928_n.jpg';
+
+// Autres - akassa-1autres/
+import akassa1a from '../images/akassa-1autres/671811254_1526460442815813_4635378644539891712_n.jpg';
+import akassa1b from '../images/akassa-1autres/672672216_1526460259482498_2617678731451287060_n.jpg';
+
+// Autres - sauce-autres/
+import sauce1 from '../images/sauce-autres/605605110_1434228685372323_5704565836692222655_n.jpg';
+import sauce2 from '../images/sauce-autres/605634479_1434228675372324_447330654598420516_n.jpg';
+
+const categories = ['Tout', 'Gâteaux', 'Viennoiseries', 'Tartes', 'Macarons', 'Éclairs', 'Autres'];
 
 function commanderWhatsApp(product: { name: string; price: string }) {
   const message =
@@ -40,42 +96,100 @@ const products: Product[] = [
     price: '25 000 FCFA',
     priceNum: 25000,
     description: 'Biscuit joconde, ganache chocolat, crème au beurre café',
-    image: img1,
+    image: gOpera1,
     badge: 'Signature',
-    galleryImages: [img1, img2],
+    galleryImages: [gOpera1, gOpera2],
   },
   {
     id: 2,
-    name: 'Croissant Pur Beurre',
-    category: 'Viennoiseries',
-    price: '1 800 FCFA',
-    priceNum: 1800,
-    description: 'Feuilletage traditionnel, beurre AOP Charentes-Poitou',
-    image: 'https://images.pexels.com/photos/30853716/pexels-photo-30853716.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200',
-    badge: 'Populaire',
+    name: 'Gâteau Prestige',
+    category: 'Gâteaux',
+    price: '32 000 FCFA',
+    priceNum: 32000,
+    description: 'Gâteau sur mesure, décoration raffinée, saveurs intenses',
+    image: gPrestige1,
+    badge: 'Best-seller',
+    galleryImages: [gPrestige1, gPrestige2, gPrestige3],
   },
   {
     id: 3,
+    name: 'Collection Gâteaux',
+    category: 'Gâteaux',
+    price: '28 000 FCFA',
+    priceNum: 28000,
+    description: 'Assortiment de gâteaux artisanaux aux saveurs variées',
+    image: gCol1,
+    badge: 'Nouveau',
+    galleryImages: [gCol1, gCol2, gCol3, gCol4],
+  },
+  {
+    id: 4,
+    name: 'Gâteau Festif',
+    category: 'Gâteaux',
+    price: '22 000 FCFA',
+    priceNum: 22000,
+    description: 'Gâteau de célébration, moelleux et élégamment décoré',
+    image: gFestif1,
+    badge: null,
+    galleryImages: [gFestif1, gFestif2, gFestif3],
+  },
+  {
+    id: 5,
+    name: 'Pains Artisanaux',
+    category: 'Viennoiseries',
+    price: '1 500 FCFA',
+    priceNum: 1500,
+    description: 'Pains cuits au four chaque matin, croustillants et dorés',
+    image: vPain1a,
+    badge: null,
+    galleryImages: [vPain1a, vPain1b, vPain1c],
+  },
+  {
+    id: 6,
+    name: 'Pain Spécial',
+    category: 'Viennoiseries',
+    price: '2 000 FCFA',
+    priceNum: 2000,
+    description: 'Pain de spécialité maison, recette exclusive du LU',
+    image: vPain2a,
+    badge: 'Populaire',
+    galleryImages: [vPain2a, vPain2b],
+  },
+  {
+    id: 7,
+    name: 'Macarons Assortis',
+    category: 'Macarons',
+    price: '15 500 FCFA',
+    priceNum: 15500,
+    description: 'Coffret de macarons aux saveurs variées, coque légère et craquante',
+    image: mac1,
+    badge: null,
+    galleryImages: [mac1, mac2, mac3],
+  },
+  {
+    id: 8,
     name: 'Tarte aux Fruits',
     category: 'Tartes',
     price: '21 000 FCFA',
     priceNum: 21000,
     description: 'Pâte sablée, crème pâtissière vanille, fruits de saison',
-    image: 'https://images.pexels.com/photos/17650199/pexels-photo-17650199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    image: tarte1,
     badge: null,
+    galleryImages: [tarte1, tarte2, tarte3, tarte4, tarte5],
   },
   {
-    id: 4,
-    name: 'Macarons Assortis',
-    category: 'Macarons',
-    price: '15 500 FCFA',
-    priceNum: 15500,
-    description: 'Coffret de 12 macarons aux saveurs variées',
-    image: 'https://images.pexels.com/photos/36455120/pexels-photo-36455120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    badge: 'Nouveau',
+    id: 9,
+    name: 'Tarte Amandine',
+    category: 'Tartes',
+    price: '18 500 FCFA',
+    priceNum: 18500,
+    description: "Crème d'amande, pâte feuilletée, amandes effilées torréfiées",
+    image: tarte2a,
+    badge: 'Best-seller',
+    galleryImages: [tarte2a, tarte2b, tarte2c],
   },
   {
-    id: 5,
+    id: 10,
     name: 'Éclair au Chocolat',
     category: 'Éclairs',
     price: '3 600 FCFA',
@@ -85,37 +199,7 @@ const products: Product[] = [
     badge: null,
   },
   {
-    id: 6,
-    name: 'Gâteau Framboise',
-    category: 'Gâteaux',
-    price: '27 500 FCFA',
-    priceNum: 27500,
-    description: 'Mousse framboise, biscuit amande, glaçage miroir',
-    image: 'https://images.pexels.com/photos/31064587/pexels-photo-31064587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    badge: 'Best-seller',
-  },
-  {
-    id: 7,
-    name: 'Pain au Chocolat',
-    category: 'Viennoiseries',
-    price: '1 900 FCFA',
-    priceNum: 1900,
-    description: 'Pâte feuilletée, barres de chocolat noir artisanal',
-    image: 'https://images.pexels.com/photos/3850433/pexels-photo-3850433.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200',
-    badge: null,
-  },
-  {
-    id: 8,
-    name: 'Tarte Amandine',
-    category: 'Tartes',
-    price: '18 500 FCFA',
-    priceNum: 18500,
-    description: "Crème d'amande, pâte feuilletée, amandes effilées",
-    image: 'https://images.pexels.com/photos/35225556/pexels-photo-35225556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    badge: null,
-  },
-  {
-    id: 9,
+    id: 11,
     name: 'Éclair Rubis',
     category: 'Éclairs',
     price: '4 300 FCFA',
@@ -123,6 +207,39 @@ const products: Product[] = [
     description: 'Pâte à choux, crème fraise-litchi, glaçage rubis',
     image: 'https://images.pexels.com/photos/30700723/pexels-photo-30700723.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200',
     badge: 'Nouveau',
+  },
+  {
+    id: 12,
+    name: 'Akassa Traditionnel',
+    category: 'Autres',
+    price: '3 000 FCFA',
+    priceNum: 3000,
+    description: 'Préparation traditionnelle béninoise, à base de maïs fermenté',
+    image: akassa1,
+    badge: 'Signature',
+    galleryImages: [akassa1, akassa2],
+  },
+  {
+    id: 13,
+    name: 'Spécialités du LU',
+    category: 'Autres',
+    price: '4 500 FCFA',
+    priceNum: 4500,
+    description: 'Créations exclusives inspirées des saveurs locales du Bénin',
+    image: akassa1a,
+    badge: null,
+    galleryImages: [akassa1a, akassa1b],
+  },
+  {
+    id: 14,
+    name: 'Sauces Artisanales',
+    category: 'Autres',
+    price: '2 500 FCFA',
+    priceNum: 2500,
+    description: 'Sauces maison préparées avec des épices et ingrédients locaux',
+    image: sauce1,
+    badge: null,
+    galleryImages: [sauce1, sauce2],
   },
 ];
 
@@ -185,7 +302,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
           {/* Thumbnails */}
           {images.length > 1 && (
-            <div className="flex gap-2 sm:gap-3">
+            <div className="flex gap-2 sm:gap-3 flex-wrap">
               {images.map((src, i) => (
                 <button
                   key={i}
@@ -329,6 +446,7 @@ export default function Creations() {
             <button
               key={cat}
               type="button"
+              aria-label={`Filtrer par ${cat}`}
               onClick={() => setActiveCategory(cat)}
               className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeCategory === cat
