@@ -33,35 +33,35 @@ const images = [
 
 export default function Gallery() {
   return (
-    <section id="galerie" className="py-24 bg-cream-50">
+    <section id="galerie" className="py-12 sm:py-16 lg:py-24 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-sm">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-xs sm:text-sm">
             Galerie
           </span>
-          <h2 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-bold text-chocolate-900 mt-3 mb-6">
+          <h2 className="font-poppins text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-chocolate-900 mt-3 mb-4 sm:mb-6">
             Un Festin Visuel
           </h2>
-          <p className="text-chocolate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-chocolate-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
             Laissez-vous séduire par la beauté de nos créations artisanales.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[220px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 auto-rows-[110px] xs:auto-rows-[140px] sm:auto-rows-[170px] md:auto-rows-[220px]">
           {images.map((img, i) => (
             <div
               key={i}
-              className={`${img.span} group relative rounded-2xl overflow-hidden cursor-pointer`}
+              className={`${img.span} group relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-chocolate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <span className="text-white font-poppins text-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-0 bg-gradient-to-t from-chocolate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3 sm:p-6">
+                <span className="text-white font-poppins text-xs sm:text-base md:text-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   {img.alt}
                 </span>
               </div>

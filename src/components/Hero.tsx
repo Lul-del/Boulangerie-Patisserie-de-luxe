@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           {/* Title */}
-          <h1 className="animate-fadeInUp delay-100 font-poppins text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.2] mb-6">
+          <h1 className="animate-fadeInUp delay-100 font-poppins text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.2] mb-6">
             Goûtez{" "}
             <span className="text-gold-300 whitespace-nowrap">
               L'Excellence
@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="animate-fadeInUp delay-200 text-base sm:text-lg md:text-xl text-cream-100 leading-relaxed max-w-xl mx-auto mb-10 px-4 font-light">
+          <p className="animate-fadeInUp delay-200 text-sm xs:text-base sm:text-lg md:text-xl text-cream-100 leading-relaxed max-w-xl mx-auto mb-6 sm:mb-10 px-4 font-light">
             Des créations artisanales raffinées, préparées avec passion et des
             ingrédients soigneusement sélectionnés pour une expérience gourmande
             unique.
@@ -44,14 +44,14 @@ export default function Hero() {
           <div className="animate-fadeInUp delay-300 flex flex-wrap items-center justify-center gap-4 px-4">
             <a
               href="#creations"
-              className="group relative inline-flex items-center justify-center gap-2 bg-gold-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/30 hover:scale-105 min-w-[200px] sm:min-w-[240px]"
+              className="group relative inline-flex items-center justify-center gap-2 bg-gold-500 text-white px-5 sm:px-8 py-3 sm:py-4 rounded-full text-sm xs:text-base sm:text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/30 hover:scale-105 min-w-[150px] xs:min-w-[200px] sm:min-w-[240px]"
             >
               <span className="relative z-10">Découvrir nos créations</span>
               <div className="absolute inset-0 bg-gold-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 min-w-[160px] sm:min-w-[180px]"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-5 sm:px-8 py-3 sm:py-4 rounded-full text-sm xs:text-base sm:text-lg font-semibold backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 min-w-[120px] xs:min-w-[160px] sm:min-w-[180px]"
             >
               Commander
             </a>

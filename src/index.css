@@ -35,6 +35,7 @@
   --color-rose-400: #ff8e24;
   --color-rose-500: #ff7c00;
   --color-rose-600: #cc6300;
+  --breakpoint-xs: 480px;
   --breakpoint-navbar: 1267px;
 }
 

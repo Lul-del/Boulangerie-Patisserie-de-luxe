@@ -5,19 +5,19 @@ export default function Footer() {
     <footer className="bg-chocolate-900 text-cream-300">
       {/* CTA Banner */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="bg-gradient-to-r from-gold-500/20 to-rose-500/20 backdrop-blur-sm border border-white/10 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+          <div className="bg-gradient-to-r from-gold-500/20 to-rose-500/20 backdrop-blur-sm border border-white/10 rounded-3xl p-5 xs:p-7 sm:p-10 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
                 Envie d'une douceur ?
               </h3>
-              <p className="text-cream-300 text-lg">
+              <p className="text-cream-300 text-sm sm:text-lg">
                 Commandez en ligne et récupérez vos pâtisseries en boutique.
               </p>
             </div>
             <a
               href="#contact"
-              className="flex-shrink-0 bg-gold-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-600 transition-all duration-300 shadow-lg hover:shadow-gold-500/30 hover:scale-105"
+              className="flex-shrink-0 bg-gold-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg font-semibold hover:bg-gold-600 transition-all duration-300 shadow-lg hover:shadow-gold-500/30 hover:scale-105 whitespace-nowrap"
             >
               Commander maintenant
             </a>
@@ -26,14 +26,14 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#accueil" className="flex items-center gap-2 mb-4">
-              <span className="text-3xl">🥐</span>
+              <span className="text-2xl sm:text-3xl">🥐</span>
               <div>
-                <h4 className="font-poppins text-xl font-bold text-white">
+                <h4 className="font-poppins text-base sm:text-lg font-bold text-white leading-tight">
                   La boulangerie pâtisserie du LU
                 </h4>
                 <p className="text-xs tracking-[0.2em] text-gold-400 uppercase">
@@ -72,10 +72,10 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h5 className="font-poppins text-lg font-bold text-white mb-6">
+            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">
               Navigation
             </h5>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {[
                 { label: 'Accueil', href: '#accueil' },
                 { label: 'Nos Créations', href: '#creations' },
@@ -97,10 +97,10 @@ export default function Footer() {
 
           {/* Spécialités */}
           <div>
-            <h5 className="font-poppins text-lg font-bold text-white mb-6">
+            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">
               Nos Spécialités
             </h5>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {[
                 'Gâteaux sur mesure',
                 'Viennoiseries',
@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h5 className="font-poppins text-lg font-bold text-white mb-6">
+            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">
               Newsletter
             </h5>
             <p className="text-cream-400 text-sm mb-4 leading-relaxed">
@@ -132,11 +132,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Votre email"
-                className="flex-1 px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-sm text-white placeholder-cream-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all"
+                className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 border border-white/10 rounded-xl text-sm text-white placeholder-cream-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all min-w-0"
               />
               <button
                 type="submit"
-                className="px-4 py-3 bg-gold-500 text-white rounded-xl hover:bg-gold-600 transition-all duration-300"
+                className="px-3 sm:px-4 py-2.5 sm:py-3 bg-gold-500 text-white rounded-xl hover:bg-gold-600 transition-all duration-300 flex-shrink-0"
               >
                 →
               </button>
@@ -147,12 +147,12 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-cream-400 text-sm flex items-center gap-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 flex flex-col xs:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-cream-400 text-xs sm:text-sm flex items-center gap-1 text-center xs:text-left">
             © 2024 La boulangerie pâtisserie du LU. Fait avec{' '}
-            <Heart size={14} className="text-rose-400 fill-rose-400" /> à Paris
+            <Heart size={12} className="text-rose-400 fill-rose-400" /> à Cotonou
           </p>
-          <div className="flex items-center gap-6 text-sm text-cream-400">
+          <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-cream-400 flex-wrap justify-center">
             <a href="#" className="hover:text-gold-400 transition-colors">
               Mentions légales
             </a>
@@ -160,7 +160,7 @@ export default function Footer() {
               CGV
             </a>
             <a href="#" className="hover:text-gold-400 transition-colors">
-              Politique de confidentialité
+              Confidentialité
             </a>
           </div>
         </div>

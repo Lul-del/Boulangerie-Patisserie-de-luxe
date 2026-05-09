@@ -41,46 +41,44 @@ const specialties = [
 
 export default function Specialties() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-sm">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-xs sm:text-sm">
             Services
           </span>
-          <h2 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-bold text-chocolate-900 mt-3 mb-6">
+          <h2 className="font-poppins text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-chocolate-900 mt-3 mb-4 sm:mb-6">
             Nos Spécialités
           </h2>
-          <p className="text-chocolate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-chocolate-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
             Du petit-déjeuner aux grandes occasions, nous accompagnons tous vos
             moments de gourmandise.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {specialties.map((s, i) => (
             <div
               key={s.title}
-              className="group relative bg-cream-50 rounded-3xl p-8 text-center hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-transparent hover:border-gold-100"
+              className="group relative bg-cream-50 rounded-3xl p-5 sm:p-8 text-center hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-transparent hover:border-gold-100"
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              {/* Icon */}
               <div
-                className={`inline-flex items-center justify-center w-16 h-16 ${s.bgColor} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+                className={`inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 ${s.bgColor} rounded-2xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
-                <s.icon size={28} className={s.iconColor} />
+                <s.icon size={26} className={s.iconColor} />
               </div>
 
-              <h3 className="font-poppins text-xl font-bold text-chocolate-900 mb-3">
+              <h3 className="font-poppins text-lg sm:text-xl font-bold text-chocolate-900 mb-2 sm:mb-3">
                 {s.title}
               </h3>
               <p className="text-chocolate-500 text-sm leading-relaxed">
                 {s.description}
               </p>
 
-              {/* Decorative line */}
-              <div className={`mt-6 h-1 w-12 mx-auto rounded-full bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 group-hover:w-20 transition-all duration-500`} />
+              <div className={`mt-4 sm:mt-6 h-1 w-12 mx-auto rounded-full bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 group-hover:w-20 transition-all duration-500`} />
             </div>
           ))}
         </div>

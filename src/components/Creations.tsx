@@ -135,11 +135,11 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-chocolate-900/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 xs:p-4 bg-chocolate-900/80 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto flex flex-col lg:flex-row"
+        className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl max-h-[95vh] overflow-y-auto flex flex-col lg:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close */}
@@ -147,14 +147,14 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
           type="button"
           aria-label="Fermer"
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 bg-chocolate-900/10 hover:bg-chocolate-900/20 rounded-full flex items-center justify-center transition-colors"
+          className="absolute top-3 right-3 z-10 w-8 h-8 sm:w-9 sm:h-9 bg-chocolate-900/10 hover:bg-chocolate-900/20 rounded-full flex items-center justify-center transition-colors"
         >
-          <X size={18} />
+          <X size={16} />
         </button>
 
         {/* Images */}
-        <div className="lg:w-1/2 p-6 flex flex-col gap-4">
-          <div className="relative rounded-2xl overflow-hidden h-72 lg:h-80 bg-cream-100">
+        <div className="lg:w-1/2 p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden h-52 xs:h-64 sm:h-72 lg:h-80 bg-cream-100">
             <img
               src={images[activeImg]}
               alt={product.name}
@@ -166,17 +166,17 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
                   type="button"
                   aria-label="Image précédente"
                   onClick={prev}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow"
+                  className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow"
                 >
-                  <ChevronLeft size={18} />
+                  <ChevronLeft size={16} />
                 </button>
                 <button
                   type="button"
                   aria-label="Image suivante"
                   onClick={next}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow"
+                  className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow"
                 >
-                  <ChevronRight size={18} />
+                  <ChevronRight size={16} />
                 </button>
               </>
             )}
@@ -184,12 +184,12 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
           {/* Thumbnails */}
           {images.length > 1 && (
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               {images.map((src, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveImg(i)}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                  className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all ${
                     i === activeImg ? 'border-gold-500 scale-105' : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
@@ -201,50 +201,50 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
         </div>
 
         {/* Details */}
-        <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+        <div className="lg:w-1/2 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
           <div>
             {product.badge && (
-              <span className="inline-block bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+              <span className="inline-block bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 sm:mb-4">
                 {product.badge}
               </span>
             )}
             <p className="text-xs text-gold-500 uppercase tracking-widest font-semibold mb-1">
               {product.category}
             </p>
-            <h2 className="font-poppins text-2xl font-bold text-chocolate-900 mb-3">
+            <h2 className="font-poppins text-xl sm:text-2xl font-bold text-chocolate-900 mb-2 sm:mb-3">
               {product.name}
             </h2>
-            <p className="text-chocolate-500 leading-relaxed mb-6">
+            <p className="text-chocolate-500 text-sm leading-relaxed mb-4 sm:mb-6">
               {product.description}
             </p>
-            <div className="h-px bg-cream-200 mb-6" />
-            <p className="text-chocolate-400 text-sm leading-relaxed">
+            <div className="h-px bg-cream-200 mb-4 sm:mb-6" />
+            <p className="text-chocolate-400 text-xs sm:text-sm leading-relaxed">
               Préparé chaque matin avec des ingrédients soigneusement sélectionnés
               pour vous offrir une expérience gustative incomparable. Disponible en
               boutique ou sur commande.
             </p>
           </div>
 
-          <div className="mt-8">
-            <div className="flex items-center justify-between mb-4">
+          <div className="mt-6 sm:mt-8">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
               <span className="text-chocolate-500 text-sm">Prix</span>
-              <span className="font-poppins text-xl font-bold text-gold-500">
+              <span className="font-poppins text-lg sm:text-xl font-bold text-gold-500">
                 {product.price}
               </span>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <button
                 type="button"
                 onClick={() => addToCart({ id: product.id, name: product.name, price: product.price, priceNum: product.priceNum, image: product.image })}
-                className="flex-1 py-4 bg-gold-500 text-white rounded-2xl font-semibold text-base hover:bg-gold-600 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] shadow-lg hover:shadow-gold-500/30"
+                className="flex-1 py-3 sm:py-4 bg-gold-500 text-white rounded-xl sm:rounded-2xl font-semibold text-sm hover:bg-gold-600 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] shadow-lg hover:shadow-gold-500/30"
               >
-                <ShoppingBag size={18} />
+                <ShoppingBag size={16} />
                 Panier
               </button>
               <button
                 type="button"
                 onClick={() => { commanderWhatsApp(product); onClose(); }}
-                className="flex-1 py-4 bg-chocolate-900 text-white rounded-2xl font-semibold text-base hover:bg-gold-500 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] shadow-lg"
+                className="flex-1 py-3 sm:py-4 bg-chocolate-900 text-white rounded-xl sm:rounded-2xl font-semibold text-sm hover:bg-gold-500 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] shadow-lg"
               >
                 Commander
               </button>
@@ -284,17 +284,14 @@ export default function Creations() {
   };
 
   return (
-    <section id="creations" className="py-24 bg-cream-50">
+    <section id="creations" className="py-12 sm:py-16 lg:py-24 bg-cream-50">
       {loading && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-chocolate-900/70 backdrop-blur-sm">
           <div className="relative w-20 h-20 mb-5">
-            {/* Outer ring */}
             <div className="absolute inset-0 rounded-full border-4 border-white/10" />
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-gold-500 animate-spin" />
-            {/* Inner ring */}
             <div className="absolute inset-3 rounded-full border-4 border-white/10" />
             <div className="absolute inset-3 rounded-full border-4 border-transparent border-b-gold-300 animate-spin [animation-duration:0.6s]" />
-            {/* Center dot */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
             </div>
@@ -311,26 +308,26 @@ export default function Creations() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-sm">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <span className="text-gold-500 font-medium tracking-[0.3em] uppercase text-xs sm:text-sm">
             Nos Spécialités
           </span>
-          <h2 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-bold text-chocolate-900 mt-3 mb-6">
+          <h2 className="font-poppins text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-chocolate-900 mt-3 mb-4 sm:mb-6">
             Nos Créations
           </h2>
-          <p className="text-chocolate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-chocolate-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
             Découvrez notre sélection de pâtisseries artisanales, préparées chaque
             jour avec les meilleurs ingrédients.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-14">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-14">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeCategory === cat
                   ? 'bg-chocolate-900 text-white shadow-lg shadow-chocolate-900/30'
                   : 'bg-white text-chocolate-700 hover:bg-gold-100 border border-gold-200'
@@ -342,17 +339,17 @@ export default function Creations() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filtered.map((product, index) => (
             <div
               key={product.id}
-              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               onMouseEnter={() => setHoveredId(product.id)}
               onMouseLeave={() => setHoveredId(null)}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-44 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -367,14 +364,14 @@ export default function Creations() {
                     type="button"
                     aria-label="Voir les détails"
                     onClick={() => openModal(product)}
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-chocolate-900 hover:bg-gold-500 hover:text-white transition-all duration-300 shadow-lg transform hover:scale-110"
+                    className="w-11 h-11 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-chocolate-900 hover:bg-gold-500 hover:text-white transition-all duration-300 shadow-lg transform hover:scale-110"
                   >
-                    <Eye size={20} />
+                    <Eye size={18} />
                   </button>
                 </div>
                 {product.badge && (
                   <span
-                    className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold tracking-wide ${
+                    className={`absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 sm:px-3 py-1 rounded-full text-xs font-bold tracking-wide ${
                       badgeColors[product.badge] || 'bg-gold-500 text-white'
                     }`}
                   >
@@ -384,36 +381,36 @@ export default function Creations() {
               </div>
 
               {/* Info */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="flex items-start justify-between mb-2">
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-gold-500 uppercase tracking-wider font-semibold mb-1">
                       {product.category}
                     </p>
-                    <h3 className="font-poppins text-xl font-bold text-chocolate-900 group-hover:text-gold-600 transition-colors duration-300">
+                    <h3 className="font-poppins text-base sm:text-xl font-bold text-chocolate-900 group-hover:text-gold-600 transition-colors duration-300 truncate">
                       {product.name}
                     </h3>
                   </div>
-                  <span className="font-poppins text-sm font-bold text-gold-500 whitespace-nowrap">
+                  <span className="font-poppins text-xs sm:text-sm font-bold text-gold-500 whitespace-nowrap ml-2">
                     {product.price}
                   </span>
                 </div>
-                <p className="text-chocolate-500 text-sm mt-3 leading-relaxed">
+                <p className="text-chocolate-500 text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed line-clamp-2">
                   {product.description}
                 </p>
-                <div className="mt-5 flex gap-3">
+                <div className="mt-3 sm:mt-5 flex gap-2 sm:gap-3">
                   <button
                     type="button"
                     onClick={() => addToCart({ id: product.id, name: product.name, price: product.price, priceNum: product.priceNum, image: product.image })}
-                    className="flex-1 py-3 bg-cream-100 text-chocolate-800 rounded-xl font-semibold text-sm hover:bg-gold-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+                    className="flex-1 py-2.5 sm:py-3 bg-cream-100 text-chocolate-800 rounded-xl font-semibold text-xs sm:text-sm hover:bg-gold-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2"
                   >
-                    <ShoppingBag size={16} />
+                    <ShoppingBag size={14} />
                     Panier
                   </button>
                   <button
                     type="button"
                     onClick={() => commanderWhatsApp(product)}
-                    className="flex-1 py-3 bg-chocolate-900 text-white rounded-xl font-semibold text-sm hover:bg-gold-500 transition-all duration-300 flex items-center justify-center gap-2"
+                    className="flex-1 py-2.5 sm:py-3 bg-chocolate-900 text-white rounded-xl font-semibold text-xs sm:text-sm hover:bg-gold-500 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2"
                   >
                     Commander
                   </button>
