@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,11 +11,42 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const subjectLabels: Record<string, string> = {
+    commande: 'Commande spéciale',
+    mariage: 'Gâteau de mariage',
+    evenement: 'Événement',
+    info: 'Renseignement',
+    autre: 'Autre',
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const lines = [
+      `Bonjour La boulangerie pâtisserie du LU 🥐,`,
+      ``,
+      `👤 Nom : ${formData.name}`,
+      `📧 Email : ${formData.email}`,
+      formData.phone ? `📞 Téléphone : ${formData.phone}` : null,
+      formData.subject ? `📌 Sujet : ${subjectLabels[formData.subject] ?? formData.subject}` : null,
+      ``,
+      `💬 Message :`,
+      formData.message,
+      ``,
+      `Merci !`,
+    ]
+      .filter((l) => l !== null)
+      .join('\n');
+
+    window.open(
+      `https://wa.me/2290152825252?text=${encodeURIComponent(lines)}`,
+      '_blank',
+      'noopener,noreferrer',
+    );
+
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
   };
 
   const info = [
@@ -219,9 +250,8 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="mt-5 sm:mt-6 w-full sm:w-auto flex items-center justify-center gap-2 bg-gold-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-gold-600 transition-all duration-300 shadow-lg hover:shadow-gold-500/30 hover:scale-105"
+                className="mt-5 sm:mt-6 w-full sm:w-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-[#1ebe5d] transition-all duration-300 shadow-lg hover:scale-105"
               >
-                <Send size={16} />
                 Envoyer le message
               </button>
             </form>
