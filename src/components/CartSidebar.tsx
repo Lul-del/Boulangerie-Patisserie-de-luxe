@@ -1,29 +1,37 @@
-import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { X, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 export default function CartSidebar() {
-  const { items, isOpen, closeCart, openCart, removeFromCart, updateQuantity, totalItems, totalPrice } = useCart();
+  const {
+    items,
+    isOpen,
+    closeCart,
+    openCart,
+    removeFromCart,
+    updateQuantity,
+    totalItems,
+    totalPrice,
+  } = useCart();
 
-  const formatPrice = (num: number) =>
-    num.toLocaleString('fr-FR') + ' FCFA';
+  const formatPrice = (num: number) => num.toLocaleString("fr-FR") + " FCFA";
 
   const handleCommander = () => {
     const lignes = items
       .map(
         (item) =>
-          `• ${item.name} x${item.quantity} — ${formatPrice(item.priceNum * item.quantity)}`
+          `• ${item.name} x${item.quantity} — ${formatPrice(item.priceNum * item.quantity)}`,
       )
-      .join('\n');
+      .join("\n");
 
     const message =
-      `Bonjour La boulangerie pâtisserie du LU 🥐,\n` +
+      `Bonjour Wɛ̀li - Pâtisserie sans gluten afro-healthy 🥐,\n` +
       `je souhaite passer la commande suivante :\n\n` +
       `${lignes}\n\n` +
       `Total : ${formatPrice(totalPrice)}\n\n` +
       `Merci !`;
 
-    const url = `https://wa.me/2290152825252?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    const url = `https://wa.me/2290151928187?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     closeCart();
   };
 
@@ -57,7 +65,7 @@ export default function CartSidebar() {
       {/* Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-full sm:w-[420px] z-50 bg-white shadow-2xl flex flex-col transition-transform duration-500 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Header */}
@@ -129,7 +137,9 @@ export default function CartSidebar() {
                       <button
                         type="button"
                         aria-label="Diminuer"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity - 1)
+                        }
                         className="w-6 h-6 flex items-center justify-center text-chocolate-500 hover:text-gold-500 transition-colors"
                       >
                         <Minus size={14} />
@@ -140,7 +150,9 @@ export default function CartSidebar() {
                       <button
                         type="button"
                         aria-label="Augmenter"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity + 1)
+                        }
                         className="w-6 h-6 flex items-center justify-center text-chocolate-500 hover:text-gold-500 transition-colors"
                       >
                         <Plus size={14} />
@@ -168,7 +180,7 @@ export default function CartSidebar() {
           <div className="border-t border-cream-200 px-6 py-5 space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-chocolate-500 text-sm">
-                {totalItems} article{totalItems > 1 ? 's' : ''}
+                {totalItems} article{totalItems > 1 ? "s" : ""}
               </span>
               <span className="font-poppins font-bold text-xl text-chocolate-900">
                 {formatPrice(totalPrice)}

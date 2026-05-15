@@ -6,31 +6,31 @@ const testimonials = [
   {
     name: "Marie",
     role: "Cliente fidèle",
-    text: "Les croissants de la La boulangerie pâtisserie du LU sont tout simplement les meilleurs de Paris. Le feuilletage est parfait, le beurre fond sur la langue... C'est un pur moment de bonheur chaque matin !",
+    text: "Les croissants de Wɛ̀li - Pâtisserie sans gluten afro-healthy sont tout simplement les meilleurs de Paris. Le feuilletage est parfait, le beurre fond sur la langue... C'est un pur moment de bonheur chaque matin !",
     rating: 5,
   },
   {
     name: "Pierre",
     role: "Critique gastronomique",
-    text: "En tant que critique, j'ai visité des centaines de pâtisseries. La boulangerie pâtisserie du LU se distingue par l'harmonie parfaite entre tradition et innovation. Leurs éclairs sont une révélation.",
+    text: "En tant que critique, j'ai visité des centaines de pâtisseries. Wɛ̀li - Pâtisserie sans gluten afro-healthy se distingue par l'harmonie parfaite entre tradition et innovation. Leurs éclairs sont une révélation.",
     rating: 5,
   },
   {
     name: "Sophie",
     role: "Wedding planner",
-    text: "Pour les mariages de mes clients, je ne fais confiance qu'à La boulangerie pâtisserie du LU. Leurs pièces montées sont des œuvres d'art et le goût est toujours à la hauteur de la présentation.",
+    text: "Pour les mariages de mes clients, je ne fais confiance qu'à Wɛ̀li - Pâtisserie sans gluten afro-healthy. Leurs pièces montées sont des œuvres d'art et le goût est toujours à la hauteur de la présentation.",
     rating: 5,
   },
   {
     name: "Thomas",
     role: "Chef étoilé",
-    text: "La qualité des ingrédients utilisés par La boulangerie pâtisserie du LU est exceptionnelle. On sent le soin apporté à chaque détail. Les macarons sont d'une finesse rare.",
+    text: "La qualité des ingrédients utilisés par Wɛ̀li - Pâtisserie sans gluten afro-healthy est exceptionnelle. On sent le soin apporté à chaque détail. Les macarons sont d'une finesse rare.",
     rating: 5,
   },
   {
     name: "Isabelle",
     role: "Blogueuse culinaire",
-    text: "J'ai découvert La boulangerie pâtisserie du LU il y a 5 ans et depuis, impossible d'aller ailleurs. Leur tarte au citron meringuée est un chef-d'œuvre absolu. Je recommande les yeux fermés !",
+    text: "J'ai découvert Wɛ̀li - Pâtisserie sans gluten afro-healthy il y a 5 ans et depuis, impossible d'aller ailleurs. Leur tarte au citron meringuée est un chef-d'œuvre absolu. Je recommande les yeux fermés !",
     rating: 5,
   },
 ];
@@ -38,13 +38,18 @@ const testimonials = [
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
-  const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+  const prev = () =>
+    setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
+  const next = () =>
+    setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
 
   const t = testimonials[current];
 
   return (
-    <section id="temoignages" className="py-10 sm:py-12 lg:py-16 bg-chocolate-900 relative overflow-hidden">
+    <section
+      id="temoignages"
+      className="py-10 sm:py-12 lg:py-16 bg-chocolate-900 relative overflow-hidden"
+    >
       <div className="absolute top-0 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
@@ -60,7 +65,10 @@ export default function Testimonials() {
 
         <Reveal delay={150}>
           <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-5 xs:p-6 sm:p-8 text-center">
-            <Quote className="mx-auto text-gold-500/30 mb-3 sm:mb-4" size={30} />
+            <Quote
+              className="mx-auto text-gold-500/30 mb-3 sm:mb-4"
+              size={30}
+            />
 
             <p className="text-sm xs:text-base sm:text-lg text-cream-200 font-light leading-relaxed mb-5 sm:mb-6 max-w-3xl mx-auto italic font-poppins">
               "{t.text}"
@@ -68,7 +76,11 @@ export default function Testimonials() {
 
             <div className="flex justify-center gap-1 mb-3 sm:mb-4">
               {Array.from({ length: t.rating }).map((_, i) => (
-                <Star key={i} size={14} className="text-gold-400 fill-gold-400" />
+                <Star
+                  key={i}
+                  size={14}
+                  className="text-gold-400 fill-gold-400"
+                />
               ))}
             </div>
 
@@ -78,7 +90,9 @@ export default function Testimonials() {
                   {t.name.charAt(0)}
                 </span>
               </div>
-              <h4 className="font-poppins text-base sm:text-lg font-bold text-white">{t.name}</h4>
+              <h4 className="font-poppins text-base sm:text-lg font-bold text-white">
+                {t.name}
+              </h4>
               <p className="text-gold-400 text-xs sm:text-sm">{t.role}</p>
             </div>
 

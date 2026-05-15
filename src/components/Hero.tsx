@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-import slide1 from "../images/carrouselle/523632393_773316935220804_9117719013455600963_n.jpg";
-import slide2 from "../images/carrouselle/524797897_1299142132214313_4775841614161126721_n.jpg";
-import slide3 from "../images/carrouselle/525205512_1299142202214306_1980358997263809588_n.jpg";
-import slide4 from "../images/carrouselle/557176857_1359645079497351_5688179141113497017_n.jpg";
-import slide5 from "../images/carrouselle/557281325_1359644856164040_1092833453464881525_n.jpg";
-import slide6 from "../images/carrouselle/605132268_898540242698472_5462772389821395498_n.jpg";
-import slide7 from "../images/carrouselle/605986787_897937832758713_2174941851753183590_n.jpg";
+import slide1 from "../images/carrouselle/490733931_1460987601984676_263702127772178637_n.jpg";
+import slide2 from "../images/carrouselle/491769245_1460397282043708_3744772823100600859_n.jpg";
+import slide3 from "../images/carrouselle/610826186_1689281639155270_1570281543290799907_n.jpg";
+import slide4 from "../images/carrouselle/628515963_1720591949357572_157598068106832956_n.jpg";
+import slide5 from "../images/carrouselle/655878231_1756929245723842_6158213312674286801_n.jpg";
+import slide6 from "../images/carrouselle/686076580_1795265721890194_185304910952613258_n.jpg";
+import slide7 from "../images/carrouselle/692718601_1799613431455423_8865723213862401728_n.jpg";
+import slide8 from "../images/carrouselle/WhatsApp Image 2026-05-07 at 22.42.47.jpeg";
 
-const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7];
+const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 const INTERVAL = 5000;
 
 export default function Hero() {

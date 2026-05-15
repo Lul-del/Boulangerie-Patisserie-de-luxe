@@ -1,5 +1,5 @@
-import { Heart, ArrowUp } from 'lucide-react';
-import Reveal from './Reveal';
+import { Heart, ArrowUp } from "lucide-react";
+import Reveal from "./Reveal";
 
 export default function Footer() {
   return (
@@ -36,24 +36,49 @@ export default function Footer() {
               <span className="text-2xl sm:text-3xl">🥐</span>
               <div>
                 <h4 className="font-poppins text-base sm:text-lg font-bold text-white leading-tight">
-                  La boulangerie pâtisserie du LU
+                  Wɛ̀li - Pâtisserie sans gluten afro-healthy
                 </h4>
                 <p className="text-xs tracking-[0.2em] text-gold-400 uppercase">
-                  Pâtisserie Artisanale
+                  Pâtisserie Afro-Healthy
                 </p>
               </div>
             </a>
             <p className="text-cream-400 text-sm leading-relaxed mt-4">
-              Une boulangerie pâtisserie artisanale au cœur du Bénin, façonnée avec passion et excellence.
+              Une boulangerie pâtisserie artisanale au cœur du Bénin, façonnée
+              avec passion et excellence.
             </p>
             <div className="flex gap-3 mt-5">
-              <a href="https://web.facebook.com/boulangeriepatisseriedulu/?locale=fr_FR&_rdc=1&_rdr" target="_blank" rel="noopener noreferrer" aria-label="Notre page Facebook" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-cream-300 hover:bg-gold-500 hover:text-white transition-all duration-300">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a
+                href="https://web.facebook.com/boulangeriepatisseriedulu/?locale=fr_FR&_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Notre page Facebook"
+                className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-cream-300 hover:bg-gold-500 hover:text-white transition-all duration-300"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="https://www.tiktok.com/@bp_du_lu" target="_blank" rel="noopener noreferrer" aria-label="Notre TikTok" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-cream-300 hover:bg-gold-500 hover:text-white transition-all duration-300">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <a
+                href="https://www.tiktok.com/@bp_du_lu"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Notre TikTok"
+                className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-cream-300 hover:bg-gold-500 hover:text-white transition-all duration-300"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.79a8.18 8.18 0 0 0 4.76 1.52V6.88a4.84 4.84 0 0 1-1-.19z" />
                 </svg>
               </a>
@@ -61,17 +86,22 @@ export default function Footer() {
           </Reveal>
 
           <Reveal delay={100}>
-            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">Navigation</h5>
+            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">
+              Navigation
+            </h5>
             <ul className="space-y-2 sm:space-y-3">
               {[
-                { label: 'Accueil', href: '#accueil' },
-                { label: 'Nos Créations', href: '#creations' },
-                { label: 'À Propos', href: '#apropos' },
-                { label: 'Galerie', href: '#galerie' },
-                { label: 'Contact', href: '#contact' },
+                { label: "Accueil", href: "#accueil" },
+                { label: "Nos Créations", href: "#creations" },
+                { label: "À Propos", href: "#apropos" },
+                { label: "Galerie", href: "#galerie" },
+                { label: "Contact", href: "#contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-cream-400 hover:text-gold-400 transition-colors duration-300 text-sm">
+                  <a
+                    href={link.href}
+                    className="text-cream-400 hover:text-gold-400 transition-colors duration-300 text-sm"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -80,18 +110,32 @@ export default function Footer() {
           </Reveal>
 
           <Reveal delay={200}>
-            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">Nos Spécialités</h5>
+            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">
+              Nos Spécialités
+            </h5>
             <ul className="space-y-2 sm:space-y-3">
-              {['Gâteaux sur mesure', 'Viennoiseries', 'Macarons', 'Éclairs', 'Tartes aux fruits', 'Petits fours'].map((item) => (
-                <li key={item}><span className="text-cream-400 text-sm">{item}</span></li>
+              {[
+                "Gâteaux sur mesure",
+                "Viennoiseries",
+                "Macarons",
+                "Éclairs",
+                "Tartes aux fruits",
+                "Petits fours",
+              ].map((item) => (
+                <li key={item}>
+                  <span className="text-cream-400 text-sm">{item}</span>
+                </li>
               ))}
             </ul>
           </Reveal>
 
           <Reveal delay={300}>
-            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">Newsletter</h5>
+            <h5 className="font-poppins text-base sm:text-lg font-bold text-white mb-4 sm:mb-6">
+              Newsletter
+            </h5>
             <p className="text-cream-400 text-sm mb-4 leading-relaxed">
-              Recevez nos nouveautés et offres exclusives directement dans votre boîte mail.
+              Recevez nos nouveautés et offres exclusives directement dans votre
+              boîte mail.
             </p>
             <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
               <input
@@ -99,7 +143,10 @@ export default function Footer() {
                 placeholder="Votre email"
                 className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 border border-white/10 rounded-xl text-sm text-white placeholder-cream-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all min-w-0"
               />
-              <button type="submit" className="px-3 sm:px-4 py-2.5 sm:py-3 bg-gold-500 text-white rounded-xl hover:bg-gold-600 transition-all duration-300 flex-shrink-0">
+              <button
+                type="submit"
+                className="px-3 sm:px-4 py-2.5 sm:py-3 bg-gold-500 text-white rounded-xl hover:bg-gold-600 transition-all duration-300 flex-shrink-0"
+              >
                 →
               </button>
             </form>
@@ -111,19 +158,30 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 flex flex-col xs:flex-row items-center justify-between gap-3 sm:gap-4">
           <p className="text-cream-400 text-xs sm:text-sm flex items-center gap-1 text-center xs:text-left">
-            © 2024 La boulangerie pâtisserie du LU. Fait avec{' '}
-            <Heart size={12} className="text-rose-400 fill-rose-400" /> à Cotonou
+            © 2024 Wɛ̀li - Pâtisserie sans gluten afro-healthy. Fait avec{" "}
+            <Heart size={12} className="text-rose-400 fill-rose-400" /> à
+            Cotonou
           </p>
           <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-cream-400 flex-wrap justify-center">
-            <a href="#" className="hover:text-gold-400 transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-gold-400 transition-colors">CGV</a>
-            <a href="#" className="hover:text-gold-400 transition-colors">Confidentialité</a>
+            <a href="#" className="hover:text-gold-400 transition-colors">
+              Mentions légales
+            </a>
+            <a href="#" className="hover:text-gold-400 transition-colors">
+              CGV
+            </a>
+            <a href="#" className="hover:text-gold-400 transition-colors">
+              Confidentialité
+            </a>
           </div>
         </div>
       </div>
 
       {/* Back to top */}
-      <a href="#accueil" aria-label="Retour en haut" className="fixed bottom-8 right-8 z-40 w-12 h-12 bg-gold-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gold-600 hover:scale-110 transition-all duration-300">
+      <a
+        href="#accueil"
+        aria-label="Retour en haut"
+        className="fixed bottom-8 right-8 z-40 w-12 h-12 bg-gold-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gold-600 hover:scale-110 transition-all duration-300"
+      >
         <ArrowUp size={20} />
       </a>
     </footer>

@@ -59,7 +59,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#accueil" className="flex items-center gap-2 group min-w-0 shrink">
+          <a
+            href="#accueil"
+            className="flex items-center gap-2 group min-w-0 shrink"
+          >
             <span className="text-2xl sm:text-3xl flex-shrink-0">🥐</span>
             <div className="min-w-0">
               <h1
@@ -67,14 +70,14 @@ export default function Navbar() {
                   scrolled ? "text-chocolate-900" : "text-white"
                 }`}
               >
-                La boulangerie pâtisserie du LU
+                Wɛ̀li - Pâtisserie sans gluten afro-healthy
               </h1>
               <p
                 className={`text-[10px] sm:text-xs tracking-[0.2em] uppercase transition-colors duration-300 whitespace-nowrap ${
                   scrolled ? "text-gold-600" : "text-gold-200"
                 }`}
               >
-                Pâtisserie Artisanale
+                Pâtisserie Afro-Healthy
               </p>
             </div>
           </a>
@@ -96,8 +99,9 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            
             <a
-              href="tel:+2290152825252"
+              href="tel:+2290151928187"
               className="flex items-center gap-2 bg-gold-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gold-600 transition-all duration-300 shadow-lg hover:shadow-gold-500/30 hover:scale-105"
             >
               <Phone size={14} />
@@ -165,12 +169,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            
             <a
-              href="tel:+2290152825252"
+              href="tel:+2290151928187"
               className="flex items-center justify-center gap-2 mt-4 bg-gold-500 text-white px-5 py-3 rounded-full font-semibold hover:bg-gold-600 transition-all"
             >
               <Phone size={14} />
-              01 52 82 52 52
+              01 51 92 81 87
             </a>
           </div>
         </div>

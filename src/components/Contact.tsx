@@ -13,23 +13,25 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const subjectLabels: Record<string, string> = {
-    commande: 'Commande spéciale',
-    mariage: 'Gâteau de mariage',
-    evenement: 'Événement',
-    info: 'Renseignement',
-    autre: 'Autre',
+    commande: "Commande spéciale",
+    mariage: "Gâteau de mariage",
+    evenement: "Événement",
+    info: "Renseignement",
+    autre: "Autre",
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const lines = [
-      `Bonjour La boulangerie pâtisserie du LU 🥐,`,
+      `Bonjour Wɛ̀li - Pâtisserie sans gluten afro-healthy 🥐,`,
       ``,
       `👤 Nom : ${formData.name}`,
       `📧 Email : ${formData.email}`,
       formData.phone ? `📞 Téléphone : ${formData.phone}` : null,
-      formData.subject ? `📌 Sujet : ${subjectLabels[formData.subject] ?? formData.subject}` : null,
+      formData.subject
+        ? `📌 Sujet : ${subjectLabels[formData.subject] ?? formData.subject}`
+        : null,
       ``,
       `💬 Message :`,
       formData.message,
@@ -37,29 +39,29 @@ export default function Contact() {
       `Merci !`,
     ]
       .filter((l) => l !== null)
-      .join('\n');
+      .join("\n");
 
     window.open(
-      `https://wa.me/2290152825252?text=${encodeURIComponent(lines)}`,
-      '_blank',
-      'noopener,noreferrer',
+      `https://wa.me/2290151928187?text=${encodeURIComponent(lines)}`,
+      "_blank",
+      "noopener,noreferrer",
     );
 
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   const info = [
     {
       icon: MapPin,
       title: "Adresse",
-      lines: ["Fidjrossè kpota, 200m à droite avant le", "carrefour Houénoussou en quittant le calvaire", "Cotonou, Bénin"],
+      lines: ["Wɛ̀li - Pâtisserie sans gluten afro-healthy", "Cotonou, Bénin"],
     },
     {
       icon: Phone,
       title: "Téléphone",
-      lines: ["01 52 82 52 52"],
+      lines: ["+229 01 51 92 81 87"],
     },
     {
       icon: Mail,
@@ -84,7 +86,8 @@ export default function Contact() {
             Restons en <span className="text-gold-500">Contact</span>
           </h2>
           <p className="text-chocolate-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-            Commande spéciale, renseignement ou réservation ? N'hésitez pas à nous contacter.
+            Commande spéciale, renseignement ou réservation ? N'hésitez pas à
+            nous contacter.
           </p>
         </Reveal>
 
@@ -102,7 +105,12 @@ export default function Contact() {
                         {item.title}
                       </h4>
                       {item.lines.map((line) => (
-                        <p key={line} className="text-chocolate-500 text-xs sm:text-sm">{line}</p>
+                        <p
+                          key={line}
+                          className="text-chocolate-500 text-xs sm:text-sm"
+                        >
+                          {line}
+                        </p>
                       ))}
                     </div>
                   </div>
@@ -117,7 +125,15 @@ export default function Contact() {
                   aria-label="Notre page Facebook"
                   className="w-11 h-11 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center text-chocolate-600 hover:bg-gold-500 hover:text-white transition-all duration-300 shadow-sm"
                 >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
                 </a>
@@ -128,7 +144,11 @@ export default function Contact() {
                   aria-label="Notre TikTok"
                   className="w-11 h-11 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center text-chocolate-600 hover:bg-gold-500 hover:text-white transition-all duration-300 shadow-sm"
                 >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.79a8.18 8.18 0 0 0 4.76 1.52V6.88a4.84 4.84 0 0 1-1-.19z" />
                   </svg>
                 </a>
@@ -137,7 +157,7 @@ export default function Contact() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-40 sm:h-48 mt-4 sm:mt-6">
                 <iframe
                   title="Localisation"
-                  src="https://maps.google.com/maps?q=6.358267,2.375746&z=16&output=embed"
+                  src="https://maps.google.com/maps?q=6.3562425,2.4277995&z=16&output=embed"
                   width="100%"
                   height="100%"
                   className="border-0"
@@ -150,7 +170,10 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={200} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-4 xs:p-6 sm:p-8 md:p-10 shadow-sm">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-3xl p-4 xs:p-6 sm:p-8 md:p-10 shadow-sm"
+            >
               {submitted && (
                 <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-2xl text-center font-medium text-sm">
                   ✅ Message envoyé sur WhatsApp avec succès !
@@ -159,42 +182,58 @@ export default function Contact() {
 
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">Nom complet</label>
+                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">
+                    Nom complet
+                  </label>
                   <input
                     type="text"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 placeholder-chocolate-300 text-sm"
                     placeholder="Jean Dupont"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">Email</label>
+                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">
+                    Email
+                  </label>
                   <input
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 placeholder-chocolate-300 text-sm"
                     placeholder="jean@email.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">Téléphone</label>
+                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">
+                    Téléphone
+                  </label>
                   <input
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 placeholder-chocolate-300 text-sm"
                     placeholder="06 12 34 56 78"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">Sujet</label>
+                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">
+                    Sujet
+                  </label>
                   <select
                     value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 text-sm"
                   >
                     <option value="">Choisir un sujet</option>
@@ -208,12 +247,16 @@ export default function Contact() {
               </div>
 
               <div className="mt-4 sm:mt-5">
-                <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">Message</label>
+                <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">
+                  Message
+                </label>
                 <textarea
                   required
                   rows={4}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 placeholder-chocolate-300 resize-none text-sm"
                   placeholder="Décrivez votre demande..."
                 />
