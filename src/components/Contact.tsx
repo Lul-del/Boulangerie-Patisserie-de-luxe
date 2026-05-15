@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import Reveal from "./Reveal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     subject: "",
     message: "",
@@ -27,7 +26,6 @@ export default function Contact() {
       `Bonjour Wɛ̀li - Pâtisserie sans gluten afro-healthy 🥐,`,
       ``,
       `👤 Nom : ${formData.name}`,
-      `📧 Email : ${formData.email}`,
       formData.phone ? `📞 Téléphone : ${formData.phone}` : null,
       formData.subject
         ? `📌 Sujet : ${subjectLabels[formData.subject] ?? formData.subject}`
@@ -49,7 +47,7 @@ export default function Contact() {
 
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setFormData({ name: "", phone: "", subject: "", message: "" });
   };
 
   const info = [
@@ -62,11 +60,6 @@ export default function Contact() {
       icon: Phone,
       title: "Téléphone",
       lines: ["+229 01 51 92 81 87"],
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      lines: ["boulangeriepatisseriedulu@gmail.com"],
     },
     {
       icon: Clock,
@@ -194,21 +187,6 @@ export default function Contact() {
                     }
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 placeholder-chocolate-300 text-sm"
                     placeholder="Jean Dupont"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-chocolate-800 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream-50 border border-gold-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 text-chocolate-900 placeholder-chocolate-300 text-sm"
-                    placeholder="jean@email.com"
                   />
                 </div>
                 <div>
